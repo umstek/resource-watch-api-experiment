@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deforestation map</title>
+
+  <!-- Mapbox GL JS includes -->
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.css' rel='stylesheet' />
+
+  <!-- CSS embedded in head tag since this is a small app -->
+  <style>
+    /* basic reset of styling */
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #metadata-container {
+      overflow-y: auto;
+    }
+
+    /* Container holding the grid */
+    #grid-top-level {
+      display: grid;
+      grid-template-columns: 45% 45%;
+      /* column widths */
+      grid-auto-rows: minmax(400px, 750px);
+      /* row heights */
+      justify-content: space-evenly;
+    }
+
+    #map-container {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Deforestation Map</h1>
+
+  <!-- Container holding the grid -->
+  <div id="grid-top-level">
+
+    <!-- Container (grid cell) for metadata panel -->
+    <div id="metadata-container">
+      <!-- Element actually holding the metadata text-->
+      <pre id="metadata">
+        ?
+      </pre>
+    </div>
+
+    <!-- Container (grid cell) for interactive map -->
+    <div id="map"></div>
+
+  </div>
+
+  <script src="./mapboxAccessToken.js"></script>
+  <script src="./index.js"></script>
+</body>
+
+</html>
